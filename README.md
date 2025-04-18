@@ -30,7 +30,7 @@ A flexible server implementation supporting Model Context Protocol
 
 ```bash
 # Clone the repository
-git clone https://github.com/rggh/rmcp-server.git
+git clone https://github.com/rggh/xp_both_mcp.git
 cd rmcp-server
 
 # Build the project
