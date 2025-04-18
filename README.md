@@ -104,58 +104,5 @@ To create your own service instead of using the built-in Counter:
 2. Implement the necessary RMCP traits
 3. Replace `Counter::new()` with your service implementation
 
-### Example Service Implementation
-
-Create a file in the `common` directory (e.g., `common/my_service.rs`):
-
-```rust
-use rmcp::{interface, Interface, Service};
-use std::sync::Arc;
-
-#[interface]
-pub trait MyServiceInterface {
-    // Define your methods here
-    async fn get_value(&self) -> i32;
-    async fn set_value(&self, new_value: i32) -> i32;
-}
-
-pub struct MyService {
-    value: std::sync::Mutex<i32>,
-}
-
-impl MyService {
-    pub fn new() -> Arc<Self> {
-        Arc::new(Self {
-            value: std::sync::Mutex::new(0),
-        })
-    }
-}
-
-#[rmcp::async_trait]
-impl MyServiceInterface for MyService {
-    async fn get_value(&self) -> i32 {
-        *self.value.lock().unwrap()
-    }
-    
-    async fn set_value(&self, new_value: i32) -> i32 {
-        let mut value = self.value.lock().unwrap();
-        *value = new_value;
-        *value
-    }
-}
-
-impl Service for MyService {
-    // Implement the necessary service methods
-}
-```
-
-Then update the main function to use your service:
-
-```rust
-// In main.rs, replace Counter::new() with MyService::new()
-let service = MyService::new()
-    .serve(stdio())
-    .await?;
-```
 
 
