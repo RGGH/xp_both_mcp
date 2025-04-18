@@ -1,5 +1,7 @@
 # Rust MCP Server using 'rmcp' 🦀
 
+https://github.com/modelcontextprotocol/rust-sdk?tab=readme-ov-file#rmcp
+
 A flexible server implementation supporting Model Context Protocol
 
 ## Features
