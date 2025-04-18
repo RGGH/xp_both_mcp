@@ -1,4 +1,4 @@
-# RMCP Server
+# Rust MCP Server using 'rmcp' 🦀
 
 A flexible server implementation supporting Model Context Protocol
 
