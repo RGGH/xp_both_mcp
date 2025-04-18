@@ -1,6 +1,6 @@
 # RMCP Server
 
-A flexible server implementation supporting Remote Method Call Protocol (RMCP) with multiple transport methods.
+A flexible server implementation supporting Model Context Protocol
 
 ## Features
 
@@ -159,6 +159,4 @@ let service = MyService::new()
     .await?;
 ```
 
-## License
 
-[Your chosen license]
