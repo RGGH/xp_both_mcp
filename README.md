@@ -18,7 +18,6 @@ A flexible server implementation supporting Model Context Protocol
 - [Configuration](#configuration)
 - [How It Works](#how-it-works)
 - [Creating Your Own Service](#creating-your-own-service)
-- [License](#license)
 
 ## Installation
 
